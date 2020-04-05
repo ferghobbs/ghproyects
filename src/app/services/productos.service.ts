@@ -46,6 +46,7 @@ export class ProductosService {
     private filtrarProductos (termino:string){
       this.productosFiltrado=[];
       termino= termino.toLocaleLowerCase();
+      
       this.productos.forEach(prod=>{
         let tituloLower = prod.titulo.toLocaleLowerCase();  
         let categoriaLower = prod.categoria.toLocaleLowerCase();
