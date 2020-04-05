@@ -11,6 +11,7 @@ import { ProductoInterface } from 'src/app/interfaces/producto.interface';
 export class ItemComponent implements OnInit {
   cargandoItem=false;
   productoActual: ProductoInterface;
+  id:string;
 
   constructor(private route: ActivatedRoute, public producto: ProductosService) { }
 
@@ -19,8 +20,8 @@ export class ItemComponent implements OnInit {
       this.producto.getProducto(parametros['id']).
       subscribe((resp: ProductoInterface)=>{
         this.productoActual=resp;
+        this.id= parametros['id'];
         this.cargandoItem=true;
-        console.log(this.productoActual.producto)
       })
             
     })
